@@ -21,6 +21,7 @@
     --theme-secondary: #7790FC;
     --hover-theme-secondary: rgba(119, 174, 252, 0.5);
     --navbar: rgba(255, 255, 255, 0.5);
+    --nav-logos: url(../img/LV-logo-2.webp);
 }
 
 html[data-color-mode="dark"] {
@@ -39,9 +40,37 @@ html[data-color-mode="dark"] {
     --theme-secondary: rgb(59, 38, 211);
     --hover-theme-secondary: rgba(88, 107, 231, 0.496);
     --navbar: rgba(36, 36, 36, 0.5);
+    --nav-logos: url(../img/LV-logo-1.webp);
 }
 
 /* End of mode */
+
+
+/* Scrollbar */
+
+/* firefox */
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--theme-primary) transparent;
+}
+
+/*  Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 12px;
+    height: 10px;
+}
+
+*::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--theme-primary);
+    border-radius: 20px;
+    border: 3px solid transparent;
+}
+
 
 /* Other */
 body,
@@ -177,6 +206,17 @@ a.goTop {
 }
 
 /* --- */
+
+/* Nav Logos */
+.nav-logos {
+    display: block;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background: var(--nav-logos) no-repeat;
+    background-size: 100%;
+    width: 75px;
+    height: 45px;
+}
 
 .nav-menu {
     display: inline-block;
@@ -319,8 +359,6 @@ h6 {
 
 /* Gradient Button */
 
-
-
 /* End of Gradient Button */
 
 /* Skills */
@@ -329,6 +367,7 @@ h6 {
 .content-skills {
     max-width: 1024px;
     width: 100%;
+    height: 370px;
     padding: 2% 4%;
     margin: 0 auto;
     display: flex;
@@ -339,6 +378,7 @@ h6 {
 @media screen and (max-width: 767px) {
     .content-skills {
         flex-direction: column;
+        height: 100%;
     }
 }
 
@@ -349,7 +389,9 @@ h6 {
     height: 250px;
     background-color: var(--theme-primary);
     margin: 10px;
+    padding: 10px;
     border-radius: 10px;
+    box-sizing: content-box;
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.24);
     border: 2px solid rgba(7, 7, 7, 0.12);
     font-size: 16px;
@@ -550,6 +592,7 @@ iframe,
     width: 50px;
     height: 50px;
     border-radius: 50%;
+    object-fit: cover;
 }
 
 .card__title {
